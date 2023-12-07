@@ -60,4 +60,7 @@ button:hover {
 p{
   white-space: nowrap;
 }
-
+h3{
+  word-wrap: break-word;
+  overflow: hidden;
+}

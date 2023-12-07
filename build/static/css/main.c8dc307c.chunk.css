@@ -1,0 +1,2 @@
+@tailwind base;@tailwind components;@tailwind utilities;*{box-sizing:border-box;margin:0;padding:0}body{background:#344a72;font-family:"Raleway",sans-serif;color:#fff;line-height:1.8em}.container{margin:30px auto;max-width:350px;padding:20px}button{background:#49c1a2;margin-top:20px;color:#fff;cursor:pointer;border:none;border-radius:5px;font-weight:700;display:flex;justify-content:right;text-align:center;padding:10px 30px}button:hover{background:#37a08e}.btn{padding:10px 25px;font-size:16px}p{white-space:nowrap}
+/*# sourceMappingURL=main.c8dc307c.chunk.css.map */

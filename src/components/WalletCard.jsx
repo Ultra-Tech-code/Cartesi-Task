@@ -54,12 +54,14 @@ const WalletCard = () => {
 	}
 
 	const signMessageHandler = async () => {
-		const exampleMessage = 'Example `personal_sign` message.';
+		const exampleMessage = 'Submitted Cartesi Masterclass Assesment';
 		try {
-		  const msg = `0x${Buffer.from(exampleMessage, 'utf8').toString('hex')}`;
+		const prefixedMessage = `\x19You Are About To Sign This Message:\n${exampleMessage.length}${exampleMessage}`;
+		const prefixedMsgHex = `0x${Buffer.from(prefixedMessage, 'utf8').toString('hex')}`;
+		console.log(prefixedMsgHex);
 		  const sign = await window.ethereum.request({
 			method: 'personal_sign',
-			params: [msg, defaultAccount],
+			params: [prefixedMsgHex, defaultAccount],
 		  });
 		  setSignResult(sign);
 		} catch (err) {
@@ -84,7 +86,6 @@ const WalletCard = () => {
 				<h3>Balance: {userBalance}</h3>
 			</div>
 			{errorMessage}
-
 			<button onClick={signMessageHandler} className='btn'>Sign Message</button>
 			<div className='signDisplay'>
 				<h3>Signature: {signResult}</h3>
