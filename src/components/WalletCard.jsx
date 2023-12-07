@@ -54,6 +54,10 @@ const WalletCard = () => {
 	}
 
 	const signMessageHandler = async () => {
+		if(!defaultAccount) {
+			setErrorMessage('Please connect wallet to sign message');
+			return;
+		}
 		const exampleMessage = 'Submitted Cartesi Masterclass Assesment';
 		try {
 		const prefixedMessage = `\x19You Are About To Sign This Message:\n${exampleMessage.length}${exampleMessage}`;
