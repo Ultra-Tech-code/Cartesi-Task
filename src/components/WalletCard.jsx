@@ -20,6 +20,7 @@ const WalletCard = () => {
 				accountChangedHandler(result[0]);
 				setConnButtonText('Wallet Connected');
 				getAccountBalance(result[0]);
+				setErrorMessage(null);
 			})
 			.catch(error => {
 				setErrorMessage(error.message);
@@ -60,6 +61,7 @@ const WalletCard = () => {
 		}
 		const exampleMessage = 'Submitted Cartesi Masterclass Assesment';
 		try {
+
 		const prefixedMessage = `\x19You Are About To Sign This Message:\n${exampleMessage.length}${exampleMessage}`;
 		const prefixedMsgHex = `0x${Buffer.from(prefixedMessage, 'utf8').toString('hex')}`;
 		console.log(prefixedMsgHex);
